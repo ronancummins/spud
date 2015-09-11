@@ -1,0 +1,35 @@
+This set of classes is a lucene implementation of the SPUD retrieval 
+model that appears in "A Polya Urn Document Language Model for 
+Improved Information Retrieval" by Ronan Cummins, Jiaul Hoque Paik, 
+and Yuanhua Lv.
+
+
+
+The classes depend on the following publicly available jar files:
+
+lucene-core-5.0.0.jar
+lucene-queryparser-5.0.0.jar
+lucene-analyzers-common-5.0.0.jar
+lucene-queries-5.0.0.jar
+commons-math3-3.3.jar
+jsoup-1.7.3.jar
+
+
+
+The only two classes with main methods are:
+indexing.LuceneTRECIndexer
+scoring.QuerySearch
+
+
+
+Copyright © 2015 Ronan Cummins
+This work is free. It comes without any warranty to the extent 
+permitted by applicable law. You can redistribute it and/or modify it 
+under the terms of the Do What The Fuck You Want To Public License, Version 2,
+as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
+
+
+
+
+
+
