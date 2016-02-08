@@ -16,9 +16,42 @@ jsoup-1.7.3.jar
 
 
 
+To build the classes, create a "classes" directory at the same level as "src". 
+
+>mkdir classes
+
+Then run
+
+>make all
+
+Included in this download is the cranfield-collection (modified to the TREC format). 
+The three important files for the modified cranfield collection are:
+
+cran.all.1400.trec-format (the documents)
+cran.qry.trec-format (the queries)
+cran.qrels.trec-format (the qrels)
+
+
 The only two classes with main methods are:
 indexing.LuceneTRECIndexer
 scoring.QuerySearch
+
+
+To index the cranfield collection, create an index file containing the full paths of files that you wish to index.
+There should be only one line in the index file for the cranfield collection. E.g. 
+././cran.all.1400.trec-format
+
+
+Then from the classes directory run:
+>java -cp .:../lib/* indexing.LuceneTRECIndexer ../cranfield-collection/lucene_index ../cranfield-collection/index-file 1 0 
+
+This will create the index in the "lucene_index" directory
+
+
+You can then run the queries on the collection from the classes directory as follows:
+>java -cp .:../lib/* searching.QuerySearch ../cranfield-collection/lucene_index ../cranfield-collection/cran.qry.trec-format ../cranfield-collection/cran.qrels.trec-format
+
+This should run the basic spud model using the queries and also calculate some effectiveness metrics for the queries. 
 
 
 

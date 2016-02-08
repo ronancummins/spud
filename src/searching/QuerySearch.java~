@@ -412,14 +412,14 @@ public class QuerySearch {
         
         //run the SPUD dir method
         Query lmnorm_query = new LMNormQuery(query);
-        searcher.setSimilarity(new SPUDLMSimilarity());
-        TopDocs ret = searcher.search(lmnorm_query, 1000);
+        //searcher.setSimilarity(new SPUDLMSimilarity());
+        //TopDocs ret = searcher.search(lmnorm_query, 1000);
         
         
         //can run other lucene ranking functions without the lmnorm part
-        //searcher.setSimilarity(new LMDirichletSimilarity());
+        searcher.setSimilarity(new LMDirichletSimilarity());
         //searcher.setSimilarity(new BM25Similarity());
-        //TopDocs ret = searcher.search(query, 1000);
+        TopDocs ret = searcher.search(query, 1000);
         
         
         

@@ -1,0 +1,28 @@
+all: logging utils indexing similarities searching 
+
+logging: src/logging/LogFormatter.java  src/logging/LoggerInitializer.java
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/logging/LogFormatter.java 
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/logging/LoggerInitializer.java
+
+utils: src/utils/UncompressInputStream.java src/utils/Utils.java 
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/utils/UncompressInputStream.java
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/utils/Utils.java 
+
+indexing: src/indexing/LuceneTRECIndexer.java
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/indexing/LuceneTRECIndexer.java
+
+similarities: src/org/apache/lucene/search/similarities/SPUDLMBaseSimilarity.java src/org/apache/lucene/search/similarities/SPUDLMSimilarity.java
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/org/apache/lucene/search/similarities/SPUDLMBaseSimilarity.java
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/org/apache/lucene/search/similarities/SPUDLMSimilarity.java
+
+searching: src/searching/Evaluator.java src/searching/QuerySearch.java src/searching/LMNormScoreProvider.java src/searching/LMNormQuery.java 
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/searching/Evaluator.java
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/searching/LMNormScoreProvider.java	
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/searching/LMNormQuery.java	
+	javac -d ./classes/. -cp ./classes/.:./lib/* src/searching/QuerySearch.java
+
+clean:
+	rm -R ./classes/*
+
+
+

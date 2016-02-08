@@ -116,7 +116,7 @@ public class LuceneTRECIndexer {
         
     
         
-        //logger.info(docs + "\t" + length + "\t" + map.size());
+        logger.info(docs + "\t" + length + "\t" + map.size());
         writer.addDocument(doc);
         
         

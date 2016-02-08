@@ -80,7 +80,7 @@ public class Evaluator {
             
             
         }
-        logger.info(qrels.size() + "");
+        logger.info(qrels.size());
         
         br.close();
 
